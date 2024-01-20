@@ -1,0 +1,65 @@
+import math
+
+
+
+human_age = float(input("What is your age: "))  
+#Takes an input labeled as human_age
+
+dog_years = math.floor((human_age) * 7)   
+#Find the dog years of the input and rounds the input down to the nearest year
+
+dog_years_days = (((human_age) * 360) * 7)
+#Converts the input into number of days in dog years/ multiplied by 7
+
+dog_months = ((dog_years_days) - ((dog_years) * 360)) // 30
+#Takes the number of days calculated in the dog_years_days variable 
+#Then takes the rounded down number of years into days
+#Then takes dog_years_days and substracts the number of days in the rounded down dog_years
+#Finally it see how many times 30 goes into the output of dog_years_days minus the number of days in the rounded down dog_years
+
+dog_days = ((dog_years_days) - ((dog_years) * 360)) % 30
+#This does the exact same thing as dog_months except the last step is different
+#This time instead of finding how many times 30 goes into the problem it gives us the remainder of the variable dog_months
+
+print(f'Your age in dog years {dog_years:.1f} years {dog_months:.1f} months {dog_days:.1f} days')
+#prints "Your age in dog years x years x months x days"
+
+
+
+cat_years = math.floor(human_age * (1/9))
+#This find the number of human years to cat years and rounds down to the nearest year
+
+cat_years_days = math.floor((human_age * 0.11111) * 360)
+#This takes the input from human_age and multiplies it by 1/9 ~ 0.11111 and multiplies it by 360 to convert it into days
+
+cat_months = ((cat_years_days) - (cat_years * 360)) // 30
+#This takes the input and finds the exact number of days in cat years
+#Then finds the rounded down number of cat days
+#And subtracts the exact number of days in cat years minus the rounded down number of cat days
+#Finally it takes the output of the comment above and gives back how many times 30 goes into the number of days giving us months
+
+cat_days = ((cat_years_days) - (cat_years * 360)) % 30
+#This one is the exact same as cat_months except it gives us the remainder
+
+print(f'Your age in cat years is {cat_years:.1f} years {cat_months:.1f} months {cat_days:.1f} days')
+#prints "Your age in cat years x years x months x days"
+
+
+
+
+horse_age_equation = 3 * ((((human_age ** 2) - 47)/ 7) + 12) 
+#Formula for finding human_age to horse years
+
+horse_years = math.floor(horse_age_equation) 
+#Finds the rounded down numeber of years
+
+horse_months = ((horse_age_equation * 360) - (horse_years * 360)) // 30
+#Find the number of days in horse years and the rounded down number of days in horse years
+#Then takes the exact days in horse years and subtracts the rounded down number of days in horse years
+#Finally gives back the amount of times 30 (one month) goes into the output of the comment above
+
+horse_days = math.floor(((horse_age_equation * 360) - (horse_years * 360)) % 30)
+#Does the exact same thing as horse_months except if gives us the remainder and not the amount of times 30 goes into the output
+
+print(f'Your age in horse years {horse_years:.1f} years {horse_months:.1f} months {horse_days:.1f} days')
+#prints "Your age in horse years x years x months x days"
